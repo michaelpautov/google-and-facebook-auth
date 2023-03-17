@@ -1,4 +1,5 @@
 module.exports = {
+  schema: ['googleAndFacebook', '875921990141223'],
   expo: {
     name: 'Google and Facebook Auth',
     version: '1.0.0',

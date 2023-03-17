@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Button } from 'react-native';
 
 import { Constants } from '@/constants';
-import { User } from '@/types';
+import { User } from '@/types/user';
 
 type Props = {
   setUserInfo: (user: User) => void;
@@ -15,7 +15,9 @@ export function GoogleAuthButton({ setUserInfo }: Props) {
   const [request, response, promptAsync] = Google.useAuthRequest({
     androidClientId: Constants.androidClientId,
     iosClientId: Constants.iosClientId,
-    webClientId: Constants.webClientId
+    webClientId: Constants.webClientId,
+    expoClientId: 'com.michaelpautov.googleAndFacebookAuth',
+    clientId: 'com.michaelpautov.googleAndFacebookAuth'
   });
 
   useEffect(() => {
@@ -38,5 +40,5 @@ export function GoogleAuthButton({ setUserInfo }: Props) {
     setUserInfo(user);
   };
 
-  return <Button title="Sign in with Google" disabled={!request} onPress={() => promptAsync()} />;
+  return <Button title="Google" disabled={!request} onPress={() => promptAsync()} />;
 }

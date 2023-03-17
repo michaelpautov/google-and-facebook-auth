@@ -7,6 +7,10 @@ PODS:
     - ExpoModulesCore
   - EXErrorRecovery (4.0.1):
     - ExpoModulesCore
+  - EXFacebook (12.2.0):
+    - ExpoModulesCore
+    - FacebookSDK/CoreKit (= 9.2.0)
+    - FacebookSDK/LoginKit (= 9.2.0)
   - EXFileSystem (15.1.1):
     - ExpoModulesCore
   - EXFont (11.0.1):
@@ -27,6 +31,10 @@ PODS:
   - EXSplashScreen (0.17.5):
     - ExpoModulesCore
     - React-Core
+  - FacebookSDK/CoreKit (9.2.0):
+    - FBSDKCoreKit (~> 9.2.0)
+  - FacebookSDK/LoginKit (9.2.0):
+    - FacebookSDK/CoreKit
   - FBLazyVector (0.70.5)
   - FBReactNativeSpec (0.70.5):
     - RCT-Folly (= 2021.07.22.00)
@@ -35,6 +43,12 @@ PODS:
     - React-Core (= 0.70.5)
     - React-jsi (= 0.70.5)
     - ReactCommon/turbomodule/core (= 0.70.5)
+  - FBSDKCoreKit (9.2.0):
+    - FBSDKCoreKit/Basics (= 9.2.0)
+    - FBSDKCoreKit/Core (= 9.2.0)
+  - FBSDKCoreKit/Basics (9.2.0)
+  - FBSDKCoreKit/Core (9.2.0):
+    - FBSDKCoreKit/Basics
   - fmt (6.2.1)
   - glog (0.3.5)
   - RCT-Folly (2021.07.22.00):
@@ -329,6 +343,7 @@ DEPENDENCIES:
   - EXApplication (from `../node_modules/expo-application/ios`)
   - EXConstants (from `../node_modules/expo-constants/ios`)
   - EXErrorRecovery (from `../node_modules/expo-error-recovery/ios`)
+  - EXFacebook (from `../node_modules/expo-facebook/ios`)
   - EXFileSystem (from `../node_modules/expo-file-system/ios`)
   - EXFont (from `../node_modules/expo-font/ios`)
   - Expo (from `../node_modules/expo`)
@@ -374,6 +389,8 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - FacebookSDK
+    - FBSDKCoreKit
     - fmt
 
 EXTERNAL SOURCES:
@@ -387,6 +404,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/expo-constants/ios"
   EXErrorRecovery:
     :path: "../node_modules/expo-error-recovery/ios"
+  EXFacebook:
+    :path: "../node_modules/expo-facebook/ios"
   EXFileSystem:
     :path: "../node_modules/expo-file-system/ios"
   EXFont:
@@ -476,6 +495,7 @@ SPEC CHECKSUMS:
   EXApplication: 034b1c40a8e9fe1bff76a1e511ee90dff64ad834
   EXConstants: 3c86653c422dd77e40d10cbbabb3025003977415
   EXErrorRecovery: ae43433feb0608a64dc5b1c8363b3e7769a9ea24
+  EXFacebook: 7ba828e0aac5f3aa6c10d8fce7652a3eaf63466a
   EXFileSystem: 60602b6eefa6873f97172c684b7537c9760b50d6
   EXFont: 319606bfe48c33b5b5063fb0994afdc496befe80
   Expo: b9fa98bf260992312ee3c424400819fb9beadafe
@@ -485,8 +505,10 @@ SPEC CHECKSUMS:
   ExpoRandom: 58b7e0a5fe1adf1cb6dc1cbe503a6fe9524f36ce
   ExpoWebBrowser: 073e50f16669d498fb49063b9b7fe780b24f7fda
   EXSplashScreen: 3e989924f61a8dd07ee4ea584c6ba14be9b51949
+  FacebookSDK: 4b9bb8e2824898b47f18c666dc145c09b40609e6
   FBLazyVector: affa4ba1bfdaac110a789192f4d452b053a86624
   FBReactNativeSpec: fe8b5f1429cfe83a8d72dc8ed61dc7704cac8745
+  FBSDKCoreKit: dace5abafc2fd9272733e6d027bcf18102712117
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
   RCT-Folly: 0080d0a6ebf2577475bda044aa59e2ca1f909cda

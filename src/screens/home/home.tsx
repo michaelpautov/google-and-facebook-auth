@@ -2,7 +2,8 @@ import * as WebBrowser from 'expo-web-browser';
 import React, { useState } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 
-import { GoogleAuthButton } from '@/components';
+import { FacebookAuthButton } from '@/components/facebook-auth-button';
+import { GoogleAuthButton } from '@/components/google-auth-button';
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -12,7 +13,11 @@ export function Home() {
   return (
     <View style={styles.container}>
       {userInfo === null ? (
-        <GoogleAuthButton setUserInfo={setUserInfo} />
+        <View style={styles.buttonContainer}>
+          <GoogleAuthButton setUserInfo={setUserInfo} />
+          <View style={styles.spaceBetweenButtons} />
+          <FacebookAuthButton setUserInfo={setUserInfo} />
+        </View>
       ) : (
         <View>
           <Text style={styles.text}>{userInfo.name}</Text>
@@ -29,6 +34,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  buttonContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  spaceBetweenButtons: {
+    paddingVertical: 10
   },
   text: {
     fontSize: 20,
